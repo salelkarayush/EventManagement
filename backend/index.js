@@ -1,5 +1,5 @@
 const express = require('express');
-const createhpgtmpl = require('./views/index.js')
+const createhpgtmpl = require('../frontend/hpg.js');
 
 const app = express();
 

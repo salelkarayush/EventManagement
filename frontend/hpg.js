@@ -50,4 +50,4 @@ const createhpgtmpl = () => /*html*/`
   </html>
 `;
 
-export default createhpgtmpl;
+module.exports = createhpgtmpl;
