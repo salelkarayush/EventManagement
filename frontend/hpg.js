@@ -25,16 +25,14 @@ const createhpgtmpl = () => /*html*/`
                 type="text"
                 name="organiser"
                 placeholder="Enter Your Name"
+                required
             />
             <input 
                 type="text"
                 name="event-name"
                 placeholder="event-title"
-            />
-            <input 
-              type="email"
-              name=""
-            />                                      
+                required
+            />                     
             <button 
             hx-on::after-request="document.querySelector('form').reset()"
             hx-on:click="console.log('new event added', event)"
