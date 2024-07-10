@@ -7,7 +7,7 @@ const UserDetail = require('../db/user.schema');
 router.get('/userexists', async(req, res) => {
     const email = req.body.email;
     try {
-        const user = await User.findOne({ email });
+        const user = await UserDetail.findOne({ email });
         if (user) {
             res.send(true);
         } else {
@@ -40,8 +40,21 @@ router.post('/register', async(req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-
+router.post('/login', async(req, res) => {
+    const body = req.body;
+    // console.log(body);
+    const {email, password} = body;
+    const user = await UserDetail.findOne({ email }).exec();
+    console.log(user);
+    const hashPass = user.password;
+    try{
+        bcrypt.compare(password, hashPass, function(err, result) {
+            res.status(201).send('User successfully logged in');
+        });
+    }catch(err){
+        console.log(err);
+        res.status(500).send('error in login');
+    }
 });
 
 module.exports = router;
