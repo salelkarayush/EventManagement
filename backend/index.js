@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const connectDB = require('./db/db.js');
-const createhpgtmpl = require('../frontend/dash.js');
+const landingpgtmpl = require('../frontend/landingpage.js');
 const authRoutes = require('./auth/authRoutes.js');
 
 connectDB();
@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: false}));
 
 //Routes
 app.get('/', (req, res) => {
-    res.send(createhpgtmpl());
+    res.send(landingpgtmpl());
 });
 
 app.use('/auth', authRoutes);
