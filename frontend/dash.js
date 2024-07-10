@@ -24,7 +24,7 @@ const createhpgtmpl = () => /*html*/`
             <input 
                 type="text"
                 name="organiser"
-                placeholder="Enter Your Name"
+                placeholder="Enter your Name"
                 required
             />
             <input 
