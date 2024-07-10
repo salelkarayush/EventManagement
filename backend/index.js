@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
     res.send(createhpgtmpl());
 });
 
-
+  
 app.post('/api/users', (req,res)=>{
     const body = req.body;
     console.log(body);
