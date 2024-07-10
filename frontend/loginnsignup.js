@@ -42,4 +42,4 @@ const loginnsignup =()=> /*html*/`
     </div>
 </body>	
 ` 
-export default loginnsignup;
+module.exports =  loginnsignup;
