@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const connectDB = require('./db/db.js');
@@ -11,6 +12,7 @@ const authRoutes = require('./auth/authRoutes.js');
 connectDB();
 
 //middleware
+app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}));
 
 //Routes
