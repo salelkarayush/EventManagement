@@ -1,5 +1,5 @@
 const express = require('express');
-const createhpgtmpl = require('../frontend/hpg.js');
+const createhpgtmpl = require('../frontend/dash.js');
 
 const app = express();
 
