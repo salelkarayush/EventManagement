@@ -13,12 +13,12 @@ const loginnsignup =()=> /*html*/`
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <div class="flex justify-center mb-6">
-            <button hx-get="/login" hx-trigger="click" class="bg-blue-500 text-white px-4 py-2 mr-2 rounded focus:outline-none hover:bg-blue-700">Login</button>
-            <button hx-get="/signup" hx-trigger="click" class="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-700">Sign Up</button>
+            <button onclick="showForm('login-form')" class="bg-blue-500 text-white px-4 py-2 mr-2 rounded focus:outline-none hover:bg-blue-700">Login</button>
+            <button onclick="showForm('signup-form')" class="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-700">Sign Up</button>
         </div>
         <div id="login-form" class="form-container hidden">
             <h1 class="text-2xl font-bold text-center mb-6">Login</h1>
-            <form class="space-y-4" hx-post="/auth/login">
+            <form action="/auth/login" method="POST" class="space-y-4">
                 <div>
                     <label for="login-email" class="block text-gray-700">Email ID:</label>
                     <input type="email" id="login-email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
@@ -27,15 +27,15 @@ const loginnsignup =()=> /*html*/`
                     <label for="login-password" class="block text-gray-700">Password:</label>
                     <input type="password" id="login-password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
-                <button type="submit" hx-post="/auth/login" class="w-full bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700">Login</button>
+                <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700">Login</button>
             </form>
         </div>
         <div id="signup-form" class="form-container hidden">
             <h1 class="text-2xl font-bold text-center mb-6">Sign Up</h1>
-            <form class="space-y-4" hx-post="/auth/register">
+            <form action="/auth/register" method="POST" class="space-y-4">
                 <div>
                     <label for="signup-name" class="block text-gray-700">Name:</label>
-                    <input type="text" id="signup-name" name="username" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <input type="text" id="signup-name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
                 <div>
                     <label for="signup-email" class="block text-gray-700">Email ID:</label>
@@ -49,7 +49,7 @@ const loginnsignup =()=> /*html*/`
                     <label for="signup-confirm-password" class="block text-gray-700">Confirm Password:</label>
                     <input type="password" id="signup-confirm-password" name="confirm_password" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 </div>
-                <button type="submit" hx-post="/auth/register" class="w-full bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700">Sign Up</button>
+                <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700">Sign Up</button>
             </form>
         </div>
     </div>
