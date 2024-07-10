@@ -5,6 +5,19 @@ const createhpgtmpl = () => /*html*/`
       <title>My Event List</title>
       <script src="https://unpkg.com/htmx.org@2.0.0"></script>
       <link rel="stylesheet" href="/styles.css">
+      <link rel="stylesheet" href="/css/loginnsignup.css">
+      <link rel="stylesheet" href="/css/viewinfo.css">
+      <script>
+        function showForm(formId) {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById(formId).classList.remove('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('login-form').classList.remove('hidden');
+        });
+    </script>
     </head>
     <body>
       <header>
