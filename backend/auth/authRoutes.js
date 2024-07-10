@@ -21,13 +21,13 @@ router.get('/userexists', async(req, res) => {
 
 router.post('/register', async(req, res) => {
     const body = req.body;
-    const { username, email, password } = body;
+    const { name, email, password } = body;
     console.log(body);
     try{
         const hash = await bcrypt.hash(password, 10);
         const newUser = new UserDetail({
             userid:1,
-            username,
+            username: name,
             email,
             password: hash
         });
@@ -48,9 +48,12 @@ router.post('/login', async(req, res) => {
     console.log(user);
     const hashPass = user.password;
     try{
-        bcrypt.compare(password, hashPass, function(err, result) {
-            res.status(201).send('User successfully logged in');
-        });
+        const isMatch = await bcrypt.compare(password, user.password);
+            if(isMatch){
+                res.status(201).send('User successfully logged in');
+            }else {
+                res.status(401).send('Invalid credentials');
+            }
     }catch(err){
         console.log(err);
         res.status(500).send('error in login');
