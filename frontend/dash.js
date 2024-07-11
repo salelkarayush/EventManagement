@@ -4,9 +4,8 @@ const createhpgtmpl = () => /*html*/`
   <head>
     <title>My Event List</title>
     <script src="https://unpkg.com/htmx.org@2.0.0"></script>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/css/loginnsignup.css">
-    <link rel="stylesheet" href="/css/viewinfo.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <script>
       function logFormData() {
           const title = document.querySelector('input[name="title"]').value;
@@ -24,7 +23,7 @@ const createhpgtmpl = () => /*html*/`
           type="text" 
           name="search" 
           placeholder="Search events" 
-          class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          class="text-black px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </form>
     </header>
