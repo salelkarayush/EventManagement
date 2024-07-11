@@ -3,11 +3,11 @@ const express = require('express');
 const app = express();
 const connectDB = require('./db/db.js');
 
-const createhpgtmpl = require('../frontend/dash.js');
+
 const loginnsignup = require('../frontend/loginnsignup.js');
 const dash = require('../frontend/dash.js');
 const eventRoutes = require('./Events/eventroutes.js');
-
+const newevent =  require('../frontend/createevent.js');
 const authRoutes = require('./auth/authRoutes.js');
 
 connectDB();
@@ -24,9 +24,12 @@ app.get('/dashboard', (req, res) => {
     res.send(dash());
 });
 
-app.get('/dashboard/search', (req, res) => {
-    res.send(`<p>Search query</p>`);
+app.get('/dashboard/create-event', (req, res) => {
+    res.send(newevent());
 });
+
+
+
 
 
 app.use('/auth', authRoutes);
