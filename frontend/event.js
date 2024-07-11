@@ -1,4 +1,3 @@
-
 const createeventtmpl = (event) => /*html*/`
     <li data-id="${event.id}">
         <div

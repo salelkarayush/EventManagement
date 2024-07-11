@@ -1,4 +1,4 @@
-const createeventtmpl = require('/event.js')
+const createeventtmpl = require('./event.js')
 
 const createlisttmpl = (eventData) => /*html*/`
     <ul>

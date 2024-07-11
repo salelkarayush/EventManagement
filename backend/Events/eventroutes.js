@@ -23,12 +23,20 @@ router.get('/all', async (req, res) => {
         const eventData = await fetchEventData();
 
         // Convert JSON data to HTML
-        const html = eventData.map(event => `
-            <li>
-                <h3>${event.title}</h3>
-                <p>${event.date}</p>
-                <p>${event.description}</p>
-            </li>
+        const html = eventData.map(event => /*html*/`
+                <li class="flex justify-between items-center bg-gray-300 p-4 rounded shadow-md mb-4">
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold">${event.title}</h3>
+                        <p class="text-sm text-gray-700">${event.date}</p>
+                        <p class="text-sm text-gray-700">${event.description}</p>
+                    </div>
+                    <button
+                        class="bg-red-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-red-700"
+                        onclick="deleteEvent(${event.id})"
+                    >
+                        Delete
+                    </button>
+                </li>
         `).join('');
 
         res.status(200).send(html); 

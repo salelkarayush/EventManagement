@@ -32,7 +32,7 @@ const createhpgtmpl = () => /*html*/`
       <div class="event-list mb-6">
         <button 
           class="bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700"
-          hx-get="/showevents"
+          hx-get="/event/all"
           hx-target=".event-list ul">Show Upcoming Events</button>
         <ul></ul>
       </div>
