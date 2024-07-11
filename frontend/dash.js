@@ -41,7 +41,16 @@ const createhpgtmpl = () => /*html*/`
                         class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     />
-                </div>                     
+                </div>
+                <div class="mb-4">
+                    <input 
+                        type="text-area"
+                        name="event-description"
+                        placeholder="Event desc"
+                        class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
+                    />
+                </div>
                 <button 
                     type="submit"
                     class="w-full bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-700"
