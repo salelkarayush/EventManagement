@@ -6,7 +6,7 @@ const connectDB = require('./db/db.js');
 const createhpgtmpl = require('../frontend/dash.js');
 const loginnsignup = require('../frontend/loginnsignup.js');
 const dash = require('../frontend/dash.js');
-
+const eventRoutes = require('./Events/eventroutes.js');
 
 const authRoutes = require('./auth/authRoutes.js');
 
@@ -30,6 +30,7 @@ app.get('/dashboard/search', (req, res) => {
 
 
 app.use('/auth', authRoutes);
+app.use('/event', eventRoutes);
 
 
 app.listen(3000, () => {
