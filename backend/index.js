@@ -9,7 +9,7 @@ const dash = require('../frontend/dash.js');
 const eventRoutes = require('./Events/eventroutes.js');
 const newevent =  require('../frontend/createevent.js');
 const authRoutes = require('./auth/authRoutes.js');
-
+const allevents =  require('../frontend/allevents.js')
 connectDB();
 
 //middleware
@@ -28,7 +28,9 @@ app.get('/dashboard/create-event', (req, res) => {
     res.send(newevent());
 });
 
-
+app.get('/events',(req,res) =>{
+    res.send(allevents())
+})
 
 
 
