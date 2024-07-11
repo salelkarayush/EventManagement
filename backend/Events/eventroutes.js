@@ -32,7 +32,6 @@ router.get('/all', async (req, res) => {
                     </div>
                     <button
                         class="bg-red-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-red-700"
-                        onclick="deleteEvent(${event.id})"
                     >
                         Delete
                     </button>
