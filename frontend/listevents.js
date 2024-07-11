@@ -1,10 +1,9 @@
-const createeventtmpl = require('"./event.js"')
+const createeventtmpl = require('/event.js')
 
-
-const createlisttmpl = () => /*html*/`
+const createlisttmpl = (eventData) => /*html*/`
     <ul>
         <!--insert data from db here-->
-        <!-- ${BOOKS_DATA.map((event) => createeventtmpl(event)).join('')} -->
+        ${eventData.map((event) => createeventtmpl(event)).join('')}
     </ul>
 `;
 module.exports = createlisttmpl;

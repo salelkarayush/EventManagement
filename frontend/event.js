@@ -6,8 +6,9 @@ const createeventtmpl = (event) => /*html*/`
             hx-get="/events/edit/${event.id}"
             hx-target="closest li"
         >
-            <h3>${event.name}</h3>
-            <p>${event.organiser}</p>
+            <h3>${event.title}</h3>
+            <p>${event.date}</p>
+            <p>${event.description}</p>
         </div>
         <button
             hx-delete="/events/${event.id}" 

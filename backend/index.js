@@ -9,7 +9,9 @@ const dash = require('../frontend/dash.js');
 const eventRoutes = require('./Events/eventroutes.js');
 const newevent =  require('../frontend/createevent.js');
 const authRoutes = require('./auth/authRoutes.js');
-const allevents =  require('../frontend/allevents.js')
+// const allevents =  require('../frontend/allevents.js')
+const createlisttmpl = require('../frontend/listevents.js')
+
 connectDB();
 
 //middleware
@@ -28,10 +30,13 @@ app.get('/dashboard/create-event', (req, res) => {
     res.send(newevent());
 });
 
-app.get('/events',(req,res) =>{
-    res.send(allevents())
-})
+// app.get('/allevents',(req,res) =>{
+//     res.send(allevents())
+// });
 
+app.get('/showevents', (req,res) =>{
+    res.send(createlisttmpl());
+});
 
 
 app.use('/auth', authRoutes);
