@@ -24,9 +24,9 @@ app.get('/dashboard', (req, res) => {
     res.send(dash());
 });
 
-// app.get('/login', (req, res) => {
-//     res.send(loginnsignup());
-// });
+app.get('/dashboard/search', (req, res) => {
+    res.send(`<p>Search query</p>`);
+});
 
 
 app.use('/auth', authRoutes);

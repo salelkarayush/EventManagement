@@ -10,7 +10,14 @@ const createhpgtmpl = () => /*html*/`
 </head>
 <body class="bg-gray-100">
     <header class="bg-blue-500 text-white p-4">
-        <h1 class="text-3xl text-center">Event List</h1>
+        <h1 class="text-3xl text-left">Event List</h1>
+        <input 
+              class="text-grey"
+              hx-get="/dashboard/search"
+              hx-trigger="search"
+              type="text"
+              text="Search Upcoming Events...">
+        <button name="search" class="bg-red-500 text-white rounded px-4 py-2 hover:bg-red-700">Search</button>
     </header>
 
     <main class="p-4">
