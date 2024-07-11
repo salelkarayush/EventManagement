@@ -7,4 +7,4 @@ const createlisttmpl = () => /*html*/`
         <!-- ${BOOKS_DATA.map((event) => createeventtmpl(event)).join('')} -->
     </ul>
 `;
-export default createlisttmpl;
+module.exports = createlisttmpl;

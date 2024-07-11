@@ -18,4 +18,4 @@ const createeventtmpl = (event) => /*html*/`
     </li>
 `;
 
-export default createeventtmpl;
+module.exports = createeventtmpl;
