@@ -5,6 +5,7 @@ const connectDB = require('./db/db.js');
 
 const createhpgtmpl = require('../frontend/dash.js');
 const loginnsignup = require('../frontend/loginnsignup.js');
+const dash = require('../frontend/dash.js');
 
 
 const authRoutes = require('./auth/authRoutes.js');
@@ -19,6 +20,10 @@ app.use(express.urlencoded({extended: false}));
 app.get('/', (req, res) => {
     res.send(loginnsignup());
 });
+app.get('/dashboard', (req, res) => {
+    res.send(dash());
+});
+
 // app.get('/login', (req, res) => {
 //     res.send(loginnsignup());
 // });

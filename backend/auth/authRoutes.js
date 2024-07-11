@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
                 password: hash
             });
             await newUser.save();
-            res.status(201).send('User created successfully');
+            res.set('HX-Redirect', '/dashboard').status(201).send('User created successfully');
         }
     } catch (err) {
         console.log(err);
@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
     try {
         const isMatch = await bcrypt.compare(password, user.password);
         if (isMatch) {
-            res.status(201).send('User successfully logged in');
+            res.set('HX-Redirect', '/dashboard').status(200).send('User successfully logged in');
         } else {
             res.status(401).send('Invalid credentials');
         }
