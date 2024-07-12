@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const app = express();
 const connectDB = require('./db/db.js');
@@ -11,12 +12,14 @@ const newevent =  require('../frontend/createevent.js');
 const authRoutes = require('./auth/authRoutes.js');
 // const allevents =  require('../frontend/allevents.js')
 const createlisttmpl = require('../frontend/listevents.js')
+const {restrictauthtologgedinuser} = require('./middleware/auth.js');
 
 connectDB();
 
 //middleware
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
 
 //Routes
 app.get('/', (req, res) => {
@@ -40,7 +43,7 @@ app.get('/showevents', (req,res) =>{
 
 
 app.use('/auth', authRoutes);
-app.use('/event', eventRoutes);
+app.use('/event', restrictauthtologgedinuser, eventRoutes);
 
 
 app.listen(3000, () => {
