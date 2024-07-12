@@ -10,8 +10,6 @@ const dash = require('../frontend/dash.js');
 const eventRoutes = require('./Events/eventroutes.js');
 const newevent =  require('../frontend/createevent.js');
 const authRoutes = require('./auth/authRoutes.js');
-// const allevents =  require('../frontend/allevents.js')
-const createlisttmpl = require('../frontend/listevents.js')
 const {restrictauthtologgedinuser} = require('./middleware/auth.js');
 
 connectDB();

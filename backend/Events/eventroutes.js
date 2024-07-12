@@ -32,7 +32,7 @@ router.get('/all', async (req, res) => {
                     </div>
                     <button
                         HX-Location:/rsvp
-                        class="bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700"
+                        class="bg-red-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-red-700"
                     >
                         RSVP
                     </button>
