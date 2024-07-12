@@ -32,7 +32,9 @@ const loginnsignup = () => /*html*/`
                     <button type="submit"
                             hx-on::after-request="document.querySelector('#login-form form').reset()"
                             hx-post="/auth/login"
+                            hx-target="#error"
                             class="w-full bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700">Login</button>
+                            <div id="error"></div>
                 </form>
             </div>
             <div id="signup-form" class="form-container hidden">
