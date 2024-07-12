@@ -42,13 +42,18 @@ router.post('/login', async (req, res) => {
     console.log(user);
     
     try {
+        if (!user) {
+            const html = `<div class="text-red-500">Invalid credentials</div>`;;
+            return res.send(html);
+        }
         const isMatch = await bcrypt.compare(password, user.password);
         if (isMatch) {
             const token = setUser(user);
             res.cookie('token', token);
             res.set('HX-Redirect', '/dashboard').status(200).send('User successfully logged in');
         } else {
-            res.status(401).send('Invalid credentials');
+            const html = `<div class="text-red-500">Invalid credentials</div>`;;
+            return res.send(html).status(401);
         }
     } catch (err) {
         console.log(err);
