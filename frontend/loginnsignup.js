@@ -5,12 +5,12 @@ const loginnsignup = () => /*html*/`
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@2.0.0"></script>
-    <title>Event Managing</title>
+    <title>Managerio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex flex-col min-h-screen bg-gray-300">
+<body class="font-mono flex flex-col min-h-screen bg-gray-300">
     <header class="bg-indigo-700 text-white p-4 flex justify-between items-center">
-        <h1 class="text-3xl">Event List</h1>
+        <h1 class="text-3xl">Managerio</h1>
     </header>
     <div class="flex items-center justify-center flex-grow">
         <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">

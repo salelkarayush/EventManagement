@@ -2,7 +2,7 @@ const createhpgtmpl = () => /*html*/`
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Event List</title>
+    <title>Managerio</title>
     <script src="https://unpkg.com/htmx.org@2.0.0"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -16,29 +16,35 @@ const createhpgtmpl = () => /*html*/`
     </script>
   </head>
   <body>
-    <header class="bg-indigo-500 text-white p-4 flex justify-between items-center">
-      <h1 class="text-3xl">Event List</h1>
-      <form hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target=".event-list ul">
-        <input 
-          type="text" 
-          name="search" 
-          placeholder="Search events" 
-          class="text-black px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
-      </form>
+    <header class="bg-indigo-500 text-white p-4 ">
+    <div class="flex justify-between items-center">
+      <h1 class="text-3xl cursor-pointer font-mono" href="/dashboard">Managerio</h1>
+        <form hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target=".event-list ul">
+          <input 
+            type="text" 
+            name="search" 
+            placeholder="Search events" 
+            class="font-mono text-black px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </form>
+    </div>
+      <div
+            hx-get=""
+            class="cursor-pointer font-mono"
+        >Welcome </div>
     </header>
 
     <main class="p-4">
       <div class="event-list mb-6">
         <button 
-          class="w-full bg-indigo-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-indigo-700"
+          class="w-full bg-indigo-500 font-mono text-white px-4 py-2 rounded focus:outline-none hover:bg-indigo-700"
           hx-get="/event/all"
           hx-target=".event-list ul">Show Upcoming Events</button>
         <ul></ul>
       </div>
       <div class="create-event mb-6">
       <button
-        class="bg-indigo-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-indigo-700"
+        class="bg-indigo-500 font-mono text-white px-4 py-2 rounded focus:outline-none hover:bg-indigo-700"
         hx-get = "/dashboard/create-event"
         hx-swap = "beforeend"
         hx-target=".create-event"
