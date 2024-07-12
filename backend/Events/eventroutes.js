@@ -31,7 +31,8 @@ router.get('/all', async (req, res) => {
                         <p class="text-sm text-gray-700">${event.description}</p>
                     </div>
                     <button
-                        class="bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-red-700"
+                        HX-Location:/rsvp
+                        class="bg-green-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-green-700"
                     >
                         RSVP
                     </button>
