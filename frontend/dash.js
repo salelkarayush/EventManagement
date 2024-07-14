@@ -52,8 +52,20 @@ const createhpgtmpl = () => /*html*/ `
           hx-swap="beforeend"
           hx-target=".create-event"
         >Create Event</button>
+
+        <button
+          class="bg-indigo-500 font-mono text-white px-4 py-2 rounded focus:outline-none hover:bg-indigo-700"
+          hx-get="/dashboard/update-event"
+          hx-swap="beforeend"
+          hx-target=".create-event"
+        >Update Event</button>
+
+
         <div></div>
       </div>
+
+
+
     </main>
   </body>
 </html>
